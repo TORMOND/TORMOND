@@ -1,9 +1,16 @@
 import './assets/landing.css';
+import { ThemeContext } from './Context/ThemeContext';
 
 const Landing = () => {
-
+   
     return ( 
-        <div className="landing">
+        <ThemeContext.Consumer>{(context)=>{
+            const { isLightTheme, light, dark} = context;
+            const theme = isLightTheme ? light : dark ;
+        
+            return ( 
+    
+        <div className="landing"   style={{ background: theme.ui, color: theme.syntax}}>
 
         <div className="container">
         <div className="level-1">
@@ -13,7 +20,7 @@ const Landing = () => {
         </div>
         <div className="level-2">
             <div className="user-image">
-                <img src="" alt="" /> 
+                <img src="profilepic.jpg" alt="" /> 
             </div>
            
             <div className="about">
@@ -36,29 +43,47 @@ const Landing = () => {
     <h3>Ecommerce Store</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae, totam voluptates facere dolor sed vel alias dignissimos impedit. Autem esse necessitatibus expedita exercitationem, at molestias quisquam. 
         Magni, quos nemo.</p>
-        <button>read more</button>
+        <button className="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+      </svg>
+      <span>read more</span>
+    </button>
 </div>
 
 <div className="project-image">
-
+<img src="Ecommerce.png" alt="Ecommerce.png" />
 </div>
 
 <div className="project-image">
-    
+    <img src="Health-app.png" alt="Health-app.png" />
 </div>
 <div className="project-infor">  
-    <h3>Ecommerce Store</h3>
+    <h3>Health App</h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae, totam voluptates facere dolor sed vel alias dignissimos impedit. Autem esse necessitatibus expedita exercitationem, at molestias quisquam. 
         Magni, quos nemo.</p>
-        <button>read more</button>
+        <button className="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+      </svg>
+      <span>read more</span>
+    </button>
 </div>
 
 
 <div className="project-infor">
-    <h3>Ecommerce Store</h3>
+    <h3>Parking Payment </h3>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae, totam voluptates facere dolor sed vel alias dignissimos impedit. Autem esse necessitatibus expedita exercitationem, at molestias quisquam. 
         Magni, quos nemo.</p>
-        <button>read more</button>
+        <button className="btn">
+      <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+        <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
+      </svg>
+      <span>read more</span>
+    </button>
 </div>
 
 <div className="project-image">
@@ -75,17 +100,6 @@ const Landing = () => {
         <button>read more</button>
 </div>
 
-
-<div className="project-infor">
-    <h3>Ecommerce Store</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio repudiandae, totam voluptates facere dolor sed vel alias dignissimos impedit. Autem esse necessitatibus expedita exercitationem, at molestias quisquam. 
-        Magni, quos nemo.</p>
-        <button>read more</button>
-</div>
-
-<div className="project-image">
-    
-</div>
           </div>
         </div>
         <div className="level-4">
@@ -115,7 +129,11 @@ const Landing = () => {
         </div>
        
         </div>
+         )
+        }}
+        </ThemeContext.Consumer>
      );
+       
 }
  
 export default Landing;

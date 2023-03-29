@@ -1,19 +1,20 @@
 :root{
---primary:#ceced1;
+--primary:#e5e5e7;
 --secondary:aqua;
 --dark:rgb(17, 5, 87);
 }
 body{
     box-sizing: border-box;
+    background-color: var(--primary);
 }
 .landing{
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
+    /* max-width: 1280px; */
 }
 .container{
 margin: 0 auto;
-padding: 2rem;
+padding:0 2rem;
 
 }
 .level-1{
@@ -30,16 +31,25 @@ padding: 2rem;
 }
 .user-image{
   border: 5px solid rgb(14, 235, 235);
-  width: 45%;
-  height: 45vh;
+  width: 28%;
+  height: 65vh;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+.user-image img{
+    width: 95%;
+    height: auto;
+    top: -40px;
+    position: absolute;
+    margin-left: 20px;
 }
 .about{
     text-align: start;
     width: 45%;
 }
-/* .resume-btn{
-    background-color: var(--secondary);
-} */
+
 .projects-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -48,12 +58,11 @@ padding: 2rem;
 }
 .project-infor{
     text-align: start;
-    padding:0.4rem 0.8rem;
+    padding:2rem 0.8rem;
 }
 .services-section{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
+    grid-template-columns: repeat(2, 1fr);   
 }
 .top-section{
     text-align: center;
@@ -64,6 +73,53 @@ padding: 2rem;
     height: 60vh;
     color: antiquewhite;
 }
+
 .project-image{
     border: 5px solid var(--secondary);
+    position: relative;
+   margin-block: 30px;
 }
+.project-image img{
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    top: -40px;
+    margin-left: 20px;
+}
+
+.btn {
+    
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    color: #4F95DA;
+    outline: none;
+    transition: 1s ease-in-out;
+  }
+  
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+  }
+  
+  .btn:hover {
+    transition: 1s ease-in-out;
+    background: #4F95DA;
+    color: #fff;
+  }
+  
+  .btn:hover svg {
+    stroke-dashoffset: -480;
+  }
+  
+  .btn span {
+  
+    font-size: 18px;
+    font-weight: 100;
+  }
